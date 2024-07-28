@@ -5,27 +5,25 @@ from dash import html
 import plotly.express as px
 from dash import dash_table
 from dash.dependencies import Input, Output
-
-import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-from pymongo import MongoClient
-import base64
 
 from MongoDB_CRUD import db_CRUD
 
 ###########################
 # Data Manipulation / Model
 ###########################
-
+# Page size of displayed table. Necessary for calculations within update_fish method.
+PAGE_SIZE = 10
 # Initialize MongoDB connection.
-database = db_CRUD("", "")
+database = db_CRUD('', '', 'localhost', 27017, 'Cole_Fish', 'Feesh')
 df = pd.DataFrame.from_records(database.read({}))
 
 # Drop id column for compatibility.
 df.drop(columns=['_id'], inplace=True)
 # Rearrange columns in the order I want.
 df = df[['name', 'short-desc', 'rarity', 'properties', 'size', 'img', 'long-desc']]
+# Sort by rarity. Non-configurable atm.
+df = df.sort_values(by=['rarity'])
 
 #########################
 # Dashboard Layout / View
@@ -44,12 +42,13 @@ app.layout = html.Div([
     dash_table.DataTable(
         id='datatable-id',
         columns=[
-            {"name": i, "id": i, "deletable": False, "selectable": True} for i in df.columns
+            {"name": i, "id": i, "deletable": False} for i in df.columns
         ],
         data=df.to_dict('records'),
-        sort_action='native',
+        sort_action='none',
         row_selectable='single',
-        page_size=10,
+        cell_selectable=False,
+        page_size=PAGE_SIZE,
         page_current=0,
         hidden_columns=['long-desc', 'img'],
         css=[{"selector": ".show-hide", "rule": "display: none"}],  # Gets rid of annoying button
@@ -90,7 +89,7 @@ def update_styles(selected_rows, page_size, **kwargs):
 def update_fish(selected_row, pageData, **kwargs):
     fishSelect = 'Test Fish'
     if selected_row:
-        fishSelect = pageData[selected_row[0]]['name']
+        fishSelect = pageData[selected_row[0] % PAGE_SIZE]['name']
     df_result = df.query('name == @fishSelect')
     # Process new data
     fishDetails = html.Div(style={'float': 'left', 'width': '33%', 'padding-left': '30px'},
