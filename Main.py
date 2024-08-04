@@ -15,9 +15,13 @@ from MongoDB_CRUD import db_CRUD
 # Page size of displayed table. Necessary for calculations within update_fish method.
 PAGE_SIZE = 10
 # Initialize MongoDB connection.
-database = db_CRUD('', '', 'localhost', 27017, 'Cole_Fish', 'Feesh')
-df = pd.DataFrame.from_records(database.read({}))
-
+database = db_CRUD('cole_admin', 'orcasplashdessert', 'localhost', 27017,
+                   'Cole_Fish', 'Feesh')
+if database.checkConnection():
+    df = pd.DataFrame.from_records(database.read({}))
+else:
+    df = pd.DataFrame({'_id': 0, 'name': 'ERROR Fish', 'short-desc': 'Failed to load database.', 'rarity': '',
+                                    'properties': '', 'size': '', 'img': 'fish_error.png', 'long-desc': 'Please consult MongoDB connection.'}, index=[0])
 # Drop id column for compatibility.
 df.drop(columns=['_id'], inplace=True)
 # Rearrange columns in the order I want.
@@ -33,11 +37,12 @@ app = Dash('SimpleExample')
 
 # HTML of webpage
 app.layout = html.Div([
-    html.Img(src='/assets/HakitaPieceofHeaven.png', style={
-        'height': '100%',
-        'width': '20%',
-    }),
-    html.Center(html.B(html.H1('Cool Cole Fish'))),
+    html.Img(src='/assets/banner.png', style={
+        'height': '200px',
+        'width': '100%',
+        'left-padding': '30px',
+        'right-padding': '30px',
+    }, alt='Cool Cole Fish'),
     html.Hr(),
     dash_table.DataTable(
         id='datatable-id',
@@ -87,7 +92,9 @@ def update_styles(selected_rows, page_size, **kwargs):
      Input('datatable-id', 'derived_viewport_data')]
 )
 def update_fish(selected_row, pageData, **kwargs):
-    fishSelect = 'Test Fish'
+    while not pageData:  # Errors thrown when callback tries to run when viewport data hasn't loaded.
+        pass
+    fishSelect = pageData[0]['name']
     if selected_row:
         fishSelect = pageData[selected_row[0] % PAGE_SIZE]['name']
     df_result = df.query('name == @fishSelect')

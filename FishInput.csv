@@ -1,9 +1,18 @@
 ﻿name,short-desc,rarity,properties,size,img,long-desc
 Test Fish,The very first of its kind.,0,debug,1,fish_test.png,"When the first ocean was made, software gods filled it with experimental creatures to observe their rudimentary behavior. Today, the descendants of this inital beta organism can be found in unusual edge cases and unsanitized input loops."
-Egg Salad Fish,,,,1,,
-Blahaj Fish,,,,1,,
-Energy Drink Fish,,,,1,,
-Corrupted Fish,,,,1,,
+Egg Salad Fish,Good when smoked.,3,yummy,1,fish_eggsalad.png,Divergent evolution of the Peanut Butter Jellyfish. It has seen more success in the seas due to its niche flavor and repelling sulfur smell.
+Blahaj Fish,A good friend from Sweden.,1,"shark, friend",1,fish_blahaj.png,"An ancient ocean protector of the vulnerable. Notable for having two distinct populations of 39.25"" and 21.75"" lengths."
+Energy Drink Fish,"Technically just litter, but a great catch regardless.",2,"yummy, non_fish",1,fish_energydrink.png,Fortunately the branding has worn off. Great for kicking together an uninspiring project.
+Corrupted Fish,Exposed to unforseen horrors.,4,spooky,1,fish_corrupt.png,Little is known of this species other than that they emerge from a particular underwater crevice of purple stone.
 Crab,An everyday crab.,1,"non_fish, grabby",1,fish_crab.png,An example of one of the most popular marine designs ever conceived by nature. All was once and will eventually return to crab.
 Platinum Fish,"A shiny, silvery streak in the river.",5,valuable,1,fish_plat.png,"The domestication of the long-adored Goldfish left a gap for other organisms to display materialistic value. Eventually, a fish of a higher tier emerged and took its place as the king of small bodies of water."
-Pufferfish,Inflatable when needed.,3,pokey,1,fish_puffer.png,Advanced species of fish using inflation tactics and poisonous barbs for self defense. Humans enjoy the challenge of catching and eating the creatures anyway.
+Pufferfish,Inflatable when needed.,3,"pokey, teeth",1,fish_puffer.png,Advanced species of fish using inflation tactics and poisonous barbs for self defense. Humans enjoy the challenge of catching and eating the creatures anyway. 
+Spotted Seatrout,"A popular inshore fish, a.k.a. speckled trout",2,"inshore, teeth",1,fish_speckledtrout.png,"A common estuarine fish found in the southern United States along coasts of Gulf of Mexico and the coastal Atlantic Ocean from Maryland to Florida. Contrary to its name, the spotted seatrout is not a member of the trout family (Salmonidae), but of the drum family (Sciaenidae)."
+Clownfish,Reminds me of you.,3,funny,1,fish_clown.png,Called a 'clown' but they can live among sea anemones and you can't. Only restores 2 Hunger points and cannot be cooked.
+Ocean Sunfish,Absolute unit.,5,large,1,fish_sunfish.png,"The heaviest of all the bony fish, with large specimens reaching 14 ft (4.3 m) vertically and 10 ft (3.0 m) horizontally, and weighing over 6,000 lb (2,700 kg). Named for their tendency to bask in sunlight at the top of the water."
+Blue Marlin,NOT a swordfish. The dorsal fin is much more magestic.,4,"pointy, large",1,fish_bluemarlin.png,"Large predatory fish of the Atlantic Ocean. Equipped with a powerful bill, teeth, and color-changing technology. Highly treasured as a powerful and challenging game fish."
+Ultima Fish,?!,10,legendary,1,fish_ultima.png,"The greatest of all fish, described only in legends. Said to swim in the ocean between realities, only occasionally dipping into the plane of reference we know as Earth."
+Orca,womp womp,4,"non_fish, teeth, intelligent",1,fish_orca.png,Apex predators who rule the sea and demonstrate highly advanced social interactions and intelligence. Typically not a threat to humans unless enslaved as a circus animal.
+Pizza Fish,PIZZA TIME,3,yummy,1,fish_pizza.png,"You didn't expect TWO fictional food fish now did you? But I mean, it's PIZZA, come on! This predatory fish actually absorbs other fish into its toppings layer, notably anchovies and sardines. Enthusiasts pay big bucks for richly decorated Pizza Fish who have grown healthy from underwater tomatoes and cheese."
+Banana,Just a banana.,1,"yummy, non_fish",1,fish_banana.png,Fell off a cargo ship probably. A prized treat for species of aquatic monkeys.
+Shrimp,$6 SRIMP SPECIAL,2,"yummy, non_fish",1,fish_shrimp.png,"A long, swimming crustacean with thousands of different species identified to date. Also a classic seafood product enjoyed by humans worldwide. Interestingly, some shrimps pledge their material possessions to an orca in exchange for entertainment."
