@@ -59,5 +59,5 @@ class db_CRUD:
         try:
             self.client.admin.command('ping')
             return True
-        except ConnectionFailure:
+        except:
             return False
