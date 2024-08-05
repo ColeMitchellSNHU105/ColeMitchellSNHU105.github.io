@@ -35,6 +35,7 @@ df = df.sort_values(by=['rarity'])
 #########################
 # app is primary variable for display on webpage.
 app = Dash('SimpleExample')
+server = app.server
 
 # HTML of webpage
 app.layout = html.Div([
@@ -122,5 +123,4 @@ def update_fish(selected_row, pageData, **kwargs):
 
 ####################
 # Run application.
-server = app.server
 app.run_server(debug=True)
