@@ -13,7 +13,8 @@ from MongoDB_CRUD import db_CRUD
 # Page size of displayed table. Necessary for calculations within update_fish method.
 PAGE_SIZE = 10
 # Initialize MongoDB connection.
-database = db_CRUD('cole_admin', 'orcasplashdessert', 'localhost', 27017,
+# Credentials are now read-only for the Atlas deployment.
+database = db_CRUD('mongodb+srv://cole_admin:orcasplashdessert@cluster0.cfdyjse.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
                    'Cole_Fish', 'Feesh')
 if database.checkConnection():
     df = pd.DataFrame.from_records(database.read({}))
@@ -119,5 +120,5 @@ def update_fish(selected_row, pageData, **kwargs):
 
 
 ####################
-# Run application.
-app.run_server(debug=True)
+# Uncomment to run locally:
+# app.run(debug=True)
