@@ -1,3 +1,4 @@
+import gunicorn
 from dash import Dash, dcc
 import dash_leaflet as dl
 from dash import dcc
@@ -121,4 +122,5 @@ def update_fish(selected_row, pageData, **kwargs):
 
 ####################
 # Run application.
-app.run(debug=True)
+server = app.server
+app.run_server(debug=True)
