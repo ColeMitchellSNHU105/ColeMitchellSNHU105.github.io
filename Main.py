@@ -1,9 +1,6 @@
-import gunicorn
-from dash import Dash, dcc
-import dash_leaflet as dl
+from dash import Dash
 from dash import dcc
 from dash import html
-import plotly.express as px
 from dash import dash_table
 from dash.dependencies import Input, Output
 import pandas as pd
