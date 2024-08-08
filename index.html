@@ -28,6 +28,14 @@
 }
 @keyframes l1 {to{clip-path: inset(0 -34% 0 0)}}
 </style>
+<div class="container">
+    <!-- The loading indicator -->
+    <div class="loading" id="loading">Loading</div>
+
+    <!-- The iframe -->
+    <iframe id="frame" style="opacity: 0" src='https://cool-cole-fish.onrender.com/' height='1000px' width='1500px'></iframe>
+</div>
+
 <script>
   // Query the elements
 const iframeEle = document.getElementById('iframe');
@@ -41,12 +49,4 @@ iframeEle.addEventListener('load', function () {
     iframeEle.style.opacity = 1;
 }, true);
 </script>
-
-<div class="container">
-    <!-- The loading indicator -->
-    <div class="loading" id="loading">Loading</div>
-
-    <!-- The iframe -->
-    <iframe id="frame" style="opacity: 0" src='https://cool-cole-fish.onrender.com/' height='1000px' width='1500px'></iframe>
-</div>
 
