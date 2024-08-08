@@ -19,23 +19,14 @@
     /* To position the loading */
     position: relative;
 }
-
-.loading {
-    /* Absolute position */
-    left: 0;
-    position: absolute;
-    top: 0;
-
-    /* Take full size */
-    height: 100%;
-    width: 100%;
-
-    /* Center */
-    align-items: center;
-    display: flex;
-    justify-content: center;
+  .loading {
+  width: 60px;
+  aspect-ratio: 4;
+  background: radial-gradient(circle closest-side,#000 90%,#0000) 0/calc(100%/3) 100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: l1 1s steps(4) infinite;
 }
-
+@keyframes l1 {to{clip-path: inset(0 -34% 0 0)}}
 </style>
 <script>
   // Query the elements
@@ -48,7 +39,7 @@ iframeEle.addEventListener('load', function () {
 
     // Bring the iframe back
     iframeEle.style.opacity = 1;
-});
+}, true);
 </script>
 
 <div class="container">
