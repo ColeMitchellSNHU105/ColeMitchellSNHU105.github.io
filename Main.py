@@ -32,7 +32,7 @@ df = df.sort_values(by=['rarity'])
 # Dashboard Layout / View
 #########################
 # app is primary variable for display on webpage.
-app = Dash('CoolColeFish')
+app = Dash('SimpleExample')
 server = app.server
 
 # HTML of webpage
@@ -43,25 +43,25 @@ app.layout = html.Div([
         'left-padding': '30px',
         'right-padding': '30px',
     }, alt='Cool Cole Fish'),
-    html.P(),
-    dcc.Loading(
-        dash_table.DataTable(
-            id='datatable-id',
-            columns=[
-                {"name": i, "id": i, "deletable": False} for i in df.columns
-            ],
-            data=df.to_dict('records'),
-            sort_action='none',
-            row_selectable='single',
-            cell_selectable=False,
-            page_size=PAGE_SIZE,
-            page_current=0,
-            hidden_columns=['long-desc', 'img'],
-            css=[{"selector": ".show-hide", "rule": "display: none"}],  # Gets rid of annoying button
-            style_cell={'textAlign': 'left'}
+    html.Hr(),
+    dash_table.DataTable(
+        id='datatable-id',
+        columns=[
+            {"name": i, "id": i, "deletable": False} for i in df.columns
+        ],
+        data=df.to_dict('records'),
+        sort_action='none',
+        row_selectable='single',
+        cell_selectable=False,
+        page_size=PAGE_SIZE,
+        page_current=0,
+        hidden_columns=['long-desc', 'img'],
+        css=[{"selector": ".show-hide", "rule": "display: none"}],  # Gets rid of annoying button
+        style_cell={'textAlign': 'left'}
 
-        ), type='circle'
     ),
+    html.Br(),
+    html.Hr(),
     html.Div(id='fishDisplay-id', style={'display': 'flex'})
 ])
 
@@ -121,4 +121,4 @@ def update_fish(selected_row, pageData, **kwargs):
 
 ####################
 # Uncomment to run locally:
-#app.run(debug=True)
+# app.run(debug=True)
