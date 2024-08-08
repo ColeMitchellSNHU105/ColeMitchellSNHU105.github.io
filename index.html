@@ -2,6 +2,7 @@
 <br>
 <div><a href='https://colemitchellsnhu105.github.io/artifact.html' target='_blank'>See original artifact and Code Review</a>
 </div>
+<p></p>
 <!-- Credit Constantin De La Roche @ https://stackoverflow.com/a/60363693 -->
 <div><!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
 <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
@@ -12,4 +13,19 @@
 <!-- Simply set the `src` attribute to your MD file and win -->
 <zero-md src="professionalreview.md"></zero-md></div> <br>
 <h3>Completed Project:</h3>
-<div><iframe src='https://cool-cole-fish.onrender.com/' height='1000px' width='1500px'></iframe></div>
+<style>
+.loader {
+  width: fit-content;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 30px;
+  padding: 0 5px 8px 0;
+  background: repeating-linear-gradient(90deg,currentColor 0 8%,#0000 0 10%) 200% 100%/200% 3px no-repeat;
+  animation: l3 2s steps(6) infinite;
+}
+.loader:before {
+  content:"Loading..."
+}
+@keyframes l3 {to{background-position: 80% 100%}}
+</style>
+<div class='loader'><iframe src='https://cool-cole-fish.onrender.com/' height='1000px' width='1500px' background-image></iframe></div>
