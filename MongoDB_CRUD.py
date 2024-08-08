@@ -3,12 +3,10 @@ from pymongo.errors import ConnectionFailure
 
 class db_CRUD:
 
-    def __init__(self, username, password, host, port, database, collection):
+    def __init__(self, url, database, collection):
         # Connection Variables, still hardcoded
-        if username and password:
-            self.client = MongoClient('mongodb://%s:%s@%s:%d' % (username, password, host, port))
-        else:
-            self.client = MongoClient('mongodb://%s:%d' % (host, port))
+        # url parameter overrides other connection parameters
+        self.client = MongoClient(url)
         self.database = self.client['%s' % database]
         self.collection = self.database['%s' % collection]
         
